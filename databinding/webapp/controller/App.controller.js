@@ -28,7 +28,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller","sap/ui/model/type/Currency"],
  
 			// Define the item description
 			var sDescription = oContext.getProperty("ProductName") + " (" + oContext.getProperty("QuantityPerUnit") + ")";
- 
+  
 			// This item is out of stock and discontinued
 			// *and* discontinued?
 			if (oContext.getProperty("UnitsInStock") === 0 && oContext.getProperty("Discontinued")) {
