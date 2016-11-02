@@ -6,7 +6,7 @@ sap.ui.define([
 		_sJsonFilesModulePath = _sAppModulePath + "localService/mockdata";
  
 	return {
- 
+		name:"test name",
 		init: function () {
 			var sManifestUrl = jQuery.sap.getModulePath(_sAppModulePath + "manifest", ".json"),
 				sJsonFilesUrl = jQuery.sap.getModulePath(_sJsonFilesModulePath),

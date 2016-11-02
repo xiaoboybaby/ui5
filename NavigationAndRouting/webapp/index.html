@@ -25,6 +25,7 @@
 					"sap/m/Shell",
 					"sap/ui/core/ComponentContainer"
 				], function (mockserver, Shell, ComponentContainer) {
+					alert(mockserver.name);
 					mockserver.init();
 					new Shell({
 						app: new ComponentContainer({
