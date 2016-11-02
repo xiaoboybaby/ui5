@@ -17,6 +17,7 @@ sap.ui.define([
             this._oDialog = sap.ui.xmlfragment("sap.ui.demo.wt.view.HelloDialog");
             this.getView().addDependent(this._oDialog);
          }
+         
          return this._oDialog;
       },
       onOpenDialog : function () {
