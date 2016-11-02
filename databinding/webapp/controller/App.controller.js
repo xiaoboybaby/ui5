@@ -23,6 +23,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller","sap/ui/model/type/Currency"],
 			oProductDetailPanel.bindElement({ path: sPath, model: "products" });
 		},
 		productListFactory : function(sId,oContext) {
+			// alert(sId);
 			var oUIControl = null;
  
 			// Define the item description
@@ -65,7 +66,6 @@ sap.ui.define(["sap/ui/core/mvc/Controller","sap/ui/model/type/Currency"],
 					}));
 				}
 			}
- 
 			// Set item active (so it is clickable) and attach the press event
 			// handler for showing the details
 			oUIControl.setType(sap.m.ListType.Active);
