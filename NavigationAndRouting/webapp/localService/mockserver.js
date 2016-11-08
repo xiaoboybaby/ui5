@@ -4,7 +4,7 @@ sap.ui.define([
 	"use strict";
 	var _sAppModulePath = "sap/ui/demo/nav/",
 		_sJsonFilesModulePath = _sAppModulePath + "localService/mockdata";
- 
+
 	return {
 		name:"test name",
 		init: function () {
@@ -34,5 +34,4 @@ sap.ui.define([
 			oMockServer.start();
 		}
 	};
- 
 });
