@@ -81,6 +81,11 @@
 				"notFound": {
 					"viewName": "NotFound",
 					"transition": "show"
+				},
+				"employees": {
+					"viewPath": "sap.ui.demo.nav.view.employee",
+					"viewName": "EmployeeList",
+					"viewLevel": 2
 				}
 			}
 		},
