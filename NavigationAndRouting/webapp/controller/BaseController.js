@@ -16,6 +16,9 @@ sap.ui.define([
 			} else {
 				this.getRouter().navTo("appHome", {}, true /*no history*/);
 			}
+		},
+		onNavToEmployees : function (oEvent){
+			this.getRouter().navTo("employeeList");
 		}
 	});
 });
