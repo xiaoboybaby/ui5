@@ -52,6 +52,34 @@
 				"dataSource": "employeeRemote"
 			}
 		},
+      "routing": {
+         "config": {
+            "routerClass": "sap.m.routing.Router",
+            "viewType": "XML",
+            "viewPath": "sap.ui.demo.nav.view",
+            "controlId": "app",
+            "controlAggregation": "pages",
+            "transition": "slide",
+            "bypassed": {
+               "target": "notFound"
+            }
+         },
+         "routes": [{
+            "pattern": "",
+            "name": "appHome",
+            "target": "home"
+         }],
+         "targets": {
+            "home": {
+               "viewName": "Home",
+               "viewLevel" : 1
+            },
+            "notFound": {
+               "viewName": "NotFound",
+               "transition": "show"
+            }
+         }
+      },
 		"contentDensities": {
 			"compact": false,
 			"cozy": false

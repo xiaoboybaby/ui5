@@ -5,9 +5,8 @@ sap.ui.define([
  
 	return Controller.extend("sap.ui.demo.nav.controller.App", {
 		onInit: function () {
- 
+	
 		}
 	});
  
 });
- 
