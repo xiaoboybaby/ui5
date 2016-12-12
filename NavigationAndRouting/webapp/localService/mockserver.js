@@ -13,7 +13,8 @@ sap.ui.define([
 				oManifest = jQuery.sap.syncGetJSON(sManifestUrl).data,
 				oMainDataSource = oManifest["sap.app"].dataSources.employeeRemote,
 				sMetadataUrl = jQuery.sap.getModulePath(_sAppModulePath + oMainDataSource.settings.localUri.replace(".xml", ""), ".xml");
- 
+				
+			// alert(sMetadataUrl);
 			// create
 			var oMockServer = new MockServer({
 				rootUri: oMainDataSource.uri
