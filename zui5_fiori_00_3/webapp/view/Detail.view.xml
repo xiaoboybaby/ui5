@@ -1,0 +1,45 @@
+<core:View controllerName="zui5_fiori_00.view.Detail" xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+	<Page title="Detail">
+		<content>
+			<ObjectHeader>
+				<statuses>
+					<ObjectStatus title="{i18n>CONNECTIONS}" text="10"/>
+				</statuses>
+				<attributes>
+					<ObjectAttribute title="{i18n>AIRLINE_ID}" text="{Carrid}"/> 
+					<ObjectAttribute title="{i18n>AIRLINE_NAME}" text="{Carrname}"/>
+					<ObjectAttribute title="{i18n>AIRLINE_URL}" text="{Url}"/>
+				</attributes>
+			</ObjectHeader>
+		<Table items="{connectionSet}">
+			<columns>
+				<Column>
+					<Text text="{i18n>AIRLINE_ID}"/>
+				</Column>
+				<Column>
+					<Text text="{i18n>CONNECTION_ID}"/>
+				</Column>
+				<Column>
+					<Text text="{i18n>COUNTRY_FROM}"/>
+				</Column>
+				<Column>
+					<Text text="{i18n>COUNTRY_TO}"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem>
+					<cells>
+						<Text text="{Carrid}"/>
+						<Text text="{Connid}"/>
+						<Text text="{Countryfr}"/>
+						<Text text="{Countryto}"/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+			
+			
+		</content>
+	</Page>
+</core:View>

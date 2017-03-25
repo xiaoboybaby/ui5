@@ -1,0 +1,10 @@
+<core:View controllerName="zui5_fiori_00.view.Master" xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+	<Page title="Master">
+		<content>
+				<List items="{/flightSet}" itemPress="onItemPress" updateFinished="onListUpdateFinished">
+					<ObjectListItem title="{Carrid}" intro="{Carrname}" number="10" type="Active"/>
+				</List>
+		</content>
+	</Page>
+</core:View>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0"
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZGW_FIORI_00_SRV" xml:lang="zh" sap:schema-version="0000"
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="Flight" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Carrid"/>
+                </Key>
+                <Property Name="Carrid" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="航线" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Carrname" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="航线承运人" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Currcode" Type="Edm.String" Nullable="false" MaxLength="5" sap:label="本位币" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+                <Property Name="Url" Type="Edm.String" Nullable="false" MaxLength="255" sap:label="URL" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="Connections" Relationship="ZGW_FIORI_00_SRV.Flight_Connection" FromRole="FromRole_Flight_Connection" ToRole="ToRole_Flight_Connection"/>
+            </EntityType>
+            <EntityType Name="Connection" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Carrid"/>
+                    <PropertyRef Name="Connid"/>
+                </Key>
+                <Property Name="Carrid" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="航线" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Connid" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="航班数量" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Countryfr" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="国家" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Cityfrom" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="起飞城市" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Airpfrom" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="部门机场" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Countryto" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="国家" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Cityto" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="目标城市" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Airpto" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="目标机场" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fltime" Type="Edm.Int32" Nullable="false" sap:label="航班时间" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Deptime" Type="Edm.Time" Precision="0" sap:label="离开" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Arrtime" Type="Edm.Time" Precision="0" sap:label="到达时间" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Distance" Type="Edm.Decimal" Nullable="false" Precision="9" Scale="4" sap:unit="Distid" sap:label="距离" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Distid" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="位于" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure"/>
+                <Property Name="Fltype" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="图解" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Period" Type="Edm.Byte" Nullable="false" sap:label="n Tag(e) später" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <Association Name="Flight_Connection" sap:content-version="1">
+                <End Type="ZGW_FIORI_00_SRV.Flight" Multiplicity="1" Role="FromRole_Flight_Connection"/>
+                <End Type="ZGW_FIORI_00_SRV.Connection" Multiplicity="*" Role="ToRole_Flight_Connection"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_Flight_Connection">
+                        <PropertyRef Name="Carrid"/>
+                    </Principal>
+                    <Dependent Role="ToRole_Flight_Connection">
+                        <PropertyRef Name="Carrid"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZGW_FIORI_00_SRV_Entities" m:IsDefaultEntityContainer="true">
+                <EntitySet Name="ConnectionSet" EntityType="ZGW_FIORI_00_SRV.Connection" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="FlightSet" EntityType="ZGW_FIORI_00_SRV.Flight" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <AssociationSet Name="Flight_ConnectionSet" Association="ZGW_FIORI_00_SRV.Flight_Connection" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="FlightSet" Role="FromRole_Flight_Connection"/>
+                    <End EntitySet="ConnectionSet" Role="ToRole_Flight_Connection"/>
+                </AssociationSet>
+            </EntityContainer>
+            <atom:link rel="self" href="./destinations/ZME/sap/opu/odata/sap/ZGW_FIORI_00_SRV/$metadata"
+                xmlns:atom="http://www.w3.org/2005/Atom"/>
+                <atom:link rel="latest-version" href="./destinations/ZME/sap/opu/odata/sap/ZGW_FIORI_00_SRV/$metadata"
+                    xmlns:atom="http://www.w3.org/2005/Atom"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>

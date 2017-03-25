@@ -19,7 +19,9 @@
 			"tablet": true,
 			"phone": true
 		},
-		"supportedThemes": ["sap_bluecrystal"]
+		"supportedThemes": [
+			"sap_bluecrystal"
+		]
 	},
 	"sap.ui5": {
 		"_version": "1.1.0",
@@ -38,14 +40,20 @@
 				}
 			},
 			"resources": {
-				"css": [{
-					"uri": "css/style.css"
-				}]
+				"css": [
+					{
+						"uri": "css/style.css"
+					}
+				]
 			}
 		},
 		"contentDensities": {
 			"compact": false,
 			"cozy": false
 		}
+	},
+	"sap.platform.abap": {
+		"uri": "/sap/bc/ui5_ui5/sap/zwalkthrough/walkthough/webapp",
+		"_version": "1.1.0"
 	}
 }

@@ -4,5 +4,16 @@
     "defaultLanguage": "zh_cn",
     "defaultI18NPropertyFile": "",
     "resourceModelName": ""
-  }
+  },
+  "deploy": {
+    "destination": "RefAppsBackend",
+    "name": "ZUI5_FIORI_00_3"
+  },
+  "generation": [
+    {
+      "templateId": "ui5template.basicSAPUI5ApplicationComponent",
+      "templateVersion": "1.4.0",
+      "dateTimeStamp": "Sat, 25 Mar 2017 05:56:43 GMT"
+    }
+  ]
 }
