@@ -1,4 +1,4 @@
-<core:View controllerName="zui5_fiori_00.view.Detail" xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml"
+l<core:View controllerName="zui5_fiori_00.view.Detail" xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml"
 	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
 	<Page title="Detail">
 		<content>
