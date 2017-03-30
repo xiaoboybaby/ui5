@@ -1,0 +1,47 @@
+[
+    {
+        "__metadata" : {
+          "id" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/IssueTypeSet('01')",
+          "uri" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/IssueTypeSet('01')",
+          "type" : "ZFIORI_KBS_SRV.IssueType"
+        },
+        "Ztype" : "01",
+        "Ztypt" : "咨询类",
+        "ZtyptEn" : "CONSULTING",
+        "issueSet" : {
+          "__deferred" : {
+            "uri" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/IssueTypeSet('01')/issueSet"
+          }
+        }
+      },
+      {
+        "__metadata" : {
+          "id" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/IssueTypeSet('02')",
+          "uri" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/IssueTypeSet('02')",
+          "type" : "ZFIORI_KBS_SRV.IssueType"
+        },
+        "Ztype" : "02",
+        "Ztypt" : "系统问题",
+        "ZtyptEn" : "SYSTEM ISSUE",
+        "issueSet" : {
+          "__deferred" : {
+            "uri" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/IssueTypeSet('02')/issueSet"
+          }
+        }
+      },
+      {
+        "__metadata" : {
+          "id" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/IssueTypeSet('03')",
+          "uri" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/IssueTypeSet('03')",
+          "type" : "ZFIORI_KBS_SRV.IssueType"
+        },
+        "Ztype" : "03",
+        "Ztypt" : "新需求",
+        "ZtyptEn" : "NEW REQUIREMENTS",
+        "issueSet" : {
+          "__deferred" : {
+            "uri" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/IssueTypeSet('03')/issueSet"
+          }
+        }
+      }
+    ]

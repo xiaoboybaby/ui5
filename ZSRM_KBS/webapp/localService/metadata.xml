@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="ZFIORI_KBS_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityType Name="Subscription" sap:semantics="subscriptions" sap:content-version="1">
+				<Key><PropertyRef Name="ID"/></Key><Property Name="ID" Type="Edm.String" Nullable="false" MaxLength="32" sap:label="Sub. ID" sap:creatable="false" sap:updatable="false"
+					sap:filterable="false"/><Property Name="user" Type="Edm.String" MaxLength="12" m:FC_TargetPath="SyndicationAuthorName" m:FC_KeepInContent="false"
+					sap:label="User Name" sap:creatable="false" sap:filterable="false"/><Property Name="updated" Type="Edm.DateTime" Precision="0" m:FC_TargetPath="SyndicationUpdated" m:FC_KeepInContent="false"
+					sap:label="Time Stamp" sap:creatable="false" sap:filterable="false"/><Property Name="title" Type="Edm.String" MaxLength="255" m:FC_TargetPath="SyndicationTitle" m:FC_KeepInContent="false" sap:label="Title"
+					sap:filterable="false"/><Property Name="deliveryAddress" Type="Edm.String" sap:label="Delivery Address" sap:filterable="false"/><Property Name="persistNotifications" Type="Edm.Boolean" sap:label="Persist Notification" sap:filterable="false"/><Property Name="collection" Type="Edm.String" MaxLength="40" sap:label="Collection" sap:filterable="false"/><Property Name="filter" Type="Edm.String" sap:label="Filter" sap:filterable="false"/><Property Name="select" Type="Edm.String" MaxLength="255" sap:label="Select" sap:filterable="false"/><Property Name="changeType" Type="Edm.String" MaxLength="30" sap:label="Change Type"/></EntityType>
+			<EntityType Name="Notification" sap:semantics="notifications" sap:content-version="1">
+				<Key><PropertyRef Name="ID"/></Key><Property Name="ID" Type="Edm.String" Nullable="false" MaxLength="32" sap:label="Notification ID"/><Property Name="collection" Type="Edm.String" MaxLength="40" sap:label="Collection"/><Property Name="title" Type="Edm.String" m:FC_TargetPath="SyndicationTitle" m:FC_KeepInContent="false" sap:label="Notif. Text"/><Property Name="updated" Type="Edm.DateTime" Precision="0" m:FC_TargetPath="SyndicationUpdated" m:FC_KeepInContent="false"
+					sap:label="Time Stamp"/><Property Name="changeType" Type="Edm.String" MaxLength="30" sap:label="Change Type"/><Property Name="entriesOfInterest" Type="Edm.Int32" sap:label="No. of Entries"/><Property Name="recipient" Type="Edm.String" MaxLength="112" sap:label="Recipient" sap:creatable="false" sap:updatable="false"/></EntityType>
+			<EntityType Name="issue" sap:content-version="1">
+				<Key><PropertyRef Name="IssueId"/></Key><Property Name="IssueId" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Version Number"/><Property Name="Ztypt" Type="Edm.String" MaxLength="2" sap:label="Issue TypeID"/><Property Name="Zmodule" Type="Edm.String" MaxLength="2" sap:label="Issue Module"/><Property Name="Title" Type="Edm.String" MaxLength="128" sap:label="Title"/><Property Name="Creatorname" Type="Edm.String" MaxLength="128" sap:label="DB2 Creator"/><Property Name="Mail" Type="Edm.String" MaxLength="254" sap:label="Email Address"/><Property Name="Phone" Type="Edm.String" MaxLength="30" sap:label="Telephone no."/><Property Name="Description" Type="Edm.String" MaxLength="255" sap:label="Data Element for the description"/><Property Name="Record" Type="Edm.String" sap:label="Msg. Text"/><Property Name="Remark" Type="Edm.String" MaxLength="100" sap:label="Key"/><Property Name="Status" Type="Edm.String" MaxLength="2" sap:label="STATUS"/><NavigationProperty Name="attachmentSet" Relationship="ZFIORI_KBS_SRV.issue_attachment" FromRole="FromRole_issue_attachment"
+					ToRole="ToRole_issue_attachment"/></EntityType>
+			<EntityType Name="attachment" sap:content-version="1">
+				<Key><PropertyRef Name="Guid"/></Key><Property Name="IssueId" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Version Number" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Guid" Type="Edm.Binary" Nullable="false" sap:label="GUID"/><Property Name="MimeType" Type="Edm.String" MaxLength="128" sap:label="Mime Type"/><Property Name="FileName" Type="Edm.String" MaxLength="255" sap:label="File Name"/><Property Name="Description" Type="Edm.String" MaxLength="255" sap:label="File Name"/><Property Name="FilePath" Type="Edm.String" MaxLength="255" sap:label="upgr buf path"/><Property Name="Url" Type="Edm.String" MaxLength="1000" sap:label="File Path"/></EntityType>
+			<EntityType Name="IssueType" sap:content-version="1">
+				<Key><PropertyRef Name="Ztype"/></Key><Property Name="Ztype" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Issue TypeID" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Ztypt" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Issue TypeName" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZtyptEn" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Issue TypeName" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="issueSet" Relationship="ZFIORI_KBS_SRV.issuetype_issue" FromRole="FromRole_issuetype_issue"
+					ToRole="ToRole_issuetype_issue"/></EntityType>
+			<EntityType Name="uname" sap:content-version="1">
+				<Key><PropertyRef Name="Uname"/></Key><Property Name="Uname" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="User Name" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="ZTSRM_KBS_004" sap:content-version="1">
+				<Key><PropertyRef Name="IssueId"/></Key><Property Name="IssueId" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Character Field Length = 10"/><Property Name="Ztypt" Type="Edm.String" MaxLength="2" sap:label="Issue TypeID"/><Property Name="Zmodule" Type="Edm.String" MaxLength="2" sap:label="Issue Module"/><Property Name="Title" Type="Edm.String" MaxLength="128" sap:label="Title"/><Property Name="Creatorname" Type="Edm.String" MaxLength="128" sap:label="DB2 Creator"/><Property Name="Mail" Type="Edm.String" MaxLength="254" sap:label="Email Address"/><Property Name="Phone" Type="Edm.String" MaxLength="30" sap:label="Telephone no."/><Property Name="Description" Type="Edm.String" MaxLength="255" sap:label="Data Element for the description"/><Property Name="Record" Type="Edm.String" sap:label="Msg. Text"/><Property Name="Remark" Type="Edm.String" MaxLength="100" sap:label="Key"/><Property Name="Status" Type="Edm.String" MaxLength="2" sap:label="STATUS"/></EntityType>
+			<EntityType Name="IssueModule" sap:content-version="1">
+				<Key><PropertyRef Name="Zmodule"/></Key><Property Name="Zmodule" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Issue Module" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Zmodulet" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Issue ModuleName" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ZmoduletEn" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Issue ModuleName" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="statusText" sap:content-version="1">
+				<Key><PropertyRef Name="DomvalueL"/></Key><Property Name="DomvalueL" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Lower_value" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Ddtext" Type="Edm.String" Nullable="false" MaxLength="60" sap:label="Short Descript." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<Association Name="issuetype_issue" sap:content-version="1"><End Type="ZFIORI_KBS_SRV.IssueType" Multiplicity="0..1" Role="FromRole_issuetype_issue"/><End Type="ZFIORI_KBS_SRV.issue" Multiplicity="*" Role="ToRole_issuetype_issue"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_issuetype_issue"><PropertyRef Name="Ztype"/></Principal>
+					<Dependent Role="ToRole_issuetype_issue"><PropertyRef Name="Ztypt"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="issue_attachment" sap:content-version="1"><End Type="ZFIORI_KBS_SRV.issue" Multiplicity="0..1" Role="FromRole_issue_attachment"/><End Type="ZFIORI_KBS_SRV.attachment" Multiplicity="*" Role="ToRole_issue_attachment"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_issue_attachment"><PropertyRef Name="IssueId"/></Principal>
+					<Dependent Role="ToRole_issue_attachment"><PropertyRef Name="IssueId"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityContainer Name="ZFIORI_KBS_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="SubscriptionCollection" EntityType="ZFIORI_KBS_SRV.Subscription" sap:content-version="1"/><EntitySet Name="NotificationCollection" EntityType="ZFIORI_KBS_SRV.Notification" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="issueSet" EntityType="ZFIORI_KBS_SRV.issue" sap:searchable="true" sap:requires-filter="true" sap:content-version="1"/><EntitySet Name="attachmentSet" EntityType="ZFIORI_KBS_SRV.attachment" sap:searchable="true" sap:requires-filter="true"
+				sap:content-version="1"/><EntitySet Name="IssueTypeSet" EntityType="ZFIORI_KBS_SRV.IssueType" sap:searchable="true" sap:requires-filter="true"
+				sap:content-version="1"/><EntitySet Name="unameSet" EntityType="ZFIORI_KBS_SRV.uname" sap:searchable="true" sap:requires-filter="true" sap:content-version="1"/><EntitySet Name="ZTSRM_KBS_004Set" EntityType="ZFIORI_KBS_SRV.ZTSRM_KBS_004" sap:searchable="true" sap:requires-filter="true"
+				sap:content-version="1"/><EntitySet Name="IssueModuleSet" EntityType="ZFIORI_KBS_SRV.IssueModule" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="statusTextSet" EntityType="ZFIORI_KBS_SRV.statusText" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/>
+				<AssociationSet Name="issuetype_issueSet" Association="ZFIORI_KBS_SRV.issuetype_issue" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="IssueTypeSet" Role="FromRole_issuetype_issue"/><End EntitySet="issueSet" Role="ToRole_issuetype_issue"/></AssociationSet>
+				<AssociationSet Name="issue_attachmentSet" Association="ZFIORI_KBS_SRV.issue_attachment" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="issueSet" Role="FromRole_issue_attachment"/><End EntitySet="attachmentSet" Role="ToRole_issue_attachment"/></AssociationSet>
+			</EntityContainer><atom:link rel="self" href="http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/><atom:link rel="latest-version" href="http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

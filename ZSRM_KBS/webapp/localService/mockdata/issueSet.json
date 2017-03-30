@@ -1,0 +1,140 @@
+[
+      {
+        "__metadata" : {
+          "id" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/issueSet('1000000000')",
+          "uri" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/issueSet('1000000000')",
+          "type" : "ZFIORI_KBS_SRV.issue"
+        },
+        "IssueId" : "1000000000",
+        "Ztypt" : "01",
+        "Zmodule" : "01",
+        "Title" : "第一个问题",
+        "Creatorname" : "邓益忠",
+        "Mail" : "dengyizhong@xiaomi.com",
+        "Phone" : "18512345678",
+        "Description" : "测试数据1",
+        "Record" : "",
+        "Remark" : "",
+        "Status" : "01",
+        "attachmentSet" : {
+          "__deferred" : {
+            "uri" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/issueSet('1000000000')/attachmentSet"
+          }
+        }
+      },
+      {
+        "__metadata" : {
+          "id" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/issueSet('1000000001')",
+          "uri" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/issueSet('1000000001')",
+          "type" : "ZFIORI_KBS_SRV.issue"
+        },
+        "IssueId" : "1000000001",
+        "Ztypt" : "02",
+        "Zmodule" : "02",
+        "Title" : "第二个问题",
+        "Creatorname" : "邓益忠",
+        "Mail" : "dengyizhong@xiaomi.com",
+        "Phone" : "18512345678",
+        "Description" : "测试数据2",
+        "Record" : "",
+        "Remark" : "",
+        "Status" : "02",
+        "attachmentSet" : {
+          "__deferred" : {
+            "uri" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/issueSet('1000000001')/attachmentSet"
+          }
+        }
+      },
+      {
+        "__metadata" : {
+          "id" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/issueSet('1000000002')",
+          "uri" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/issueSet('1000000002')",
+          "type" : "ZFIORI_KBS_SRV.issue"
+        },
+        "IssueId" : "1000000002",
+        "Ztypt" : "03",
+        "Zmodule" : "03",
+        "Title" : "第三个问题",
+        "Creatorname" : "邓益忠",
+        "Mail" : "dengyizhong@xiaomi.com",
+        "Phone" : "18512345678",
+        "Description" : "测试数据3",
+        "Record" : "",
+        "Remark" : "",
+        "Status" : "03",
+        "attachmentSet" : {
+          "__deferred" : {
+            "uri" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/issueSet('1000000002')/attachmentSet"
+          }
+        }
+      },
+      {
+        "__metadata" : {
+          "id" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/issueSet('1000000003')",
+          "uri" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/issueSet('1000000003')",
+          "type" : "ZFIORI_KBS_SRV.issue"
+        },
+        "IssueId" : "1000000003",
+        "Ztypt" : "01",
+        "Zmodule" : "02",
+        "Title" : "第四个问题",
+        "Creatorname" : "邓益忠",
+        "Mail" : "dengyizhong@xiaomi.com",
+        "Phone" : "18512345678",
+        "Description" : "测试数据4",
+        "Record" : "",
+        "Remark" : "",
+        "Status" : "02",
+        "attachmentSet" : {
+          "__deferred" : {
+            "uri" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/issueSet('1000000003')/attachmentSet"
+          }
+        }
+      },
+      {
+        "__metadata" : {
+          "id" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/issueSet('1000000004')",
+          "uri" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/issueSet('1000000004')",
+          "type" : "ZFIORI_KBS_SRV.issue"
+        },
+        "IssueId" : "1000000004",
+        "Ztypt" : "01",
+        "Zmodule" : "02",
+        "Title" : "第五个问题",
+        "Creatorname" : "邓益忠",
+        "Mail" : "dengyizhong@xiaomi.com",
+        "Phone" : "18512345678",
+        "Description" : "测试数据5",
+        "Record" : "",
+        "Remark" : "",
+        "Status" : "02",
+        "attachmentSet" : {
+          "__deferred" : {
+            "uri" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/issueSet('1000000004')/attachmentSet"
+          }
+        }
+      },
+      {
+        "__metadata" : {
+          "id" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/issueSet('1000000005')",
+          "uri" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/issueSet('1000000005')",
+          "type" : "ZFIORI_KBS_SRV.issue"
+        },
+        "IssueId" : "1000000005",
+        "Ztypt" : "01",
+        "Zmodule" : "01",
+        "Title" : "第六个问题",
+        "Creatorname" : "邓益忠",
+        "Mail" : "DENGYIZHONG@XIAOMI.COM",
+        "Phone" : "18512345678",
+        "Description" : "测试数据6",
+        "Record" : "",
+        "Remark" : "",
+        "Status" : "01",
+        "attachmentSet" : {
+          "__deferred" : {
+            "uri" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/issueSet('1000000005')/attachmentSet"
+          }
+        }
+      }
+    ]

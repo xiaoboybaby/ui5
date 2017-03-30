@@ -1,0 +1,22 @@
+[
+      {
+        "__metadata" : {
+          "id" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/IssueModuleSet('01')",
+          "uri" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/IssueModuleSet('01')",
+          "type" : "ZFIORI_KBS_SRV.IssueModule"
+        },
+        "Zmodule" : "01",
+        "Zmodulet" : "订单类",
+        "ZmoduletEn" : "PO"
+      },
+      {
+        "__metadata" : {
+          "id" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/IssueModuleSet('02')",
+          "uri" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/IssueModuleSet('02')",
+          "type" : "ZFIORI_KBS_SRV.IssueModule"
+        },
+        "Zmodule" : "02",
+        "Zmodulet" : "送货单",
+        "ZmoduletEn" : "ASN"
+      }
+    ]

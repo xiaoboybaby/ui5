@@ -1,0 +1,65 @@
+[
+      {
+        "__metadata" : {
+          "id" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/statusTextSet('01')",
+          "uri" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/statusTextSet('01')",
+          "type" : "ZFIORI_KBS_SRV.statusText"
+        },
+        "DomvalueL" : "01",
+        "Ddtext" : "待处理"
+      },
+      {
+        "__metadata" : {
+          "id" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/statusTextSet('02')",
+          "uri" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/statusTextSet('02')",
+          "type" : "ZFIORI_KBS_SRV.statusText"
+        },
+        "DomvalueL" : "02",
+        "Ddtext" : "已登记"
+      },
+      {
+        "__metadata" : {
+          "id" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/statusTextSet('03')",
+          "uri" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/statusTextSet('03')",
+          "type" : "ZFIORI_KBS_SRV.statusText"
+        },
+        "DomvalueL" : "03",
+        "Ddtext" : "处理中"
+      },
+      {
+        "__metadata" : {
+          "id" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/statusTextSet('04')",
+          "uri" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/statusTextSet('04')",
+          "type" : "ZFIORI_KBS_SRV.statusText"
+        },
+        "DomvalueL" : "04",
+        "Ddtext" : "待用户回复"
+      },
+      {
+        "__metadata" : {
+          "id" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/statusTextSet('05')",
+          "uri" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/statusTextSet('05')",
+          "type" : "ZFIORI_KBS_SRV.statusText"
+        },
+        "DomvalueL" : "05",
+        "Ddtext" : "已解决"
+      },
+      {
+        "__metadata" : {
+          "id" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/statusTextSet('06')",
+          "uri" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/statusTextSet('06')",
+          "type" : "ZFIORI_KBS_SRV.statusText"
+        },
+        "DomvalueL" : "06",
+        "Ddtext" : "已挂起"
+      },
+      {
+        "__metadata" : {
+          "id" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/statusTextSet('07')",
+          "uri" : "http://abap750.dummy.nodomain:8000/sap/opu/odata/SAP/ZFIORI_KBS_SRV/statusTextSet('07')",
+          "type" : "ZFIORI_KBS_SRV.statusText"
+        },
+        "DomvalueL" : "07",
+        "Ddtext" : "已撤销"
+      }
+    ]

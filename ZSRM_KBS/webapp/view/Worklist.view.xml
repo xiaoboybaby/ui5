@@ -1,0 +1,85 @@
+<mvc:View controllerName="myCompany.myApp.controller.Worklist" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic" xmlns="sap.m"
+	xmlns:c="sap.ui.core" xmlns:table="sap.ui.table">
+	<semantic:FullscreenPage id="page" navButtonPress="onNavBack" showNavButton="true" title="{i18n>worklistViewTitle}">
+		<semantic:content>
+			<IconTabBar id="iconTabBar" select="onQuickFilter" expandable="false" applyContentPadding="false">
+				<items>
+					<IconTabFilter key="all" showAll="true" count="{worklistView>/countAll}" text="{i18n>WorklistFilterProductsAll}"/>
+					<IconTabSeparator/>
+					<IconTabFilter key="S01" icon="sap-icon://message-success" iconColor="Positive" count="{worklistView>/S01}"
+						text="{i18n>WorklistFilterInStock}"/>
+					<IconTabFilter key="S02" icon="sap-icon://message-warning" iconColor="Critical" count="{worklistView>/S02}"
+						text="{i18n>WorklistFilterShortage}"/>
+					<IconTabFilter key="S03" icon="sap-icon://message-error" iconColor="Negative" count="{worklistView>/S03}"
+						text="{i18n>WorklistFilterOutOfStock}"/>
+				</items>
+			</IconTabBar>
+			<Table id="table" busyIndicatorDelay="{worklistView>/tableBusyDelay}" class="sapUiResponsiveMargin sapUiNoMarginTop" growing="true"
+				growingScrollToLoad="true" noDataText="{worklistView>/tableNoDataText}" updateFinished="onUpdateFinished" width="auto" mode="MultiSelect"
+				items="{ path: '/issueSet', sorter: { path: 'IssueId', descending: false } }">
+				<!--				items="{ path: '/issueSet', sorter: { path: 'IssueId', descending: false }, parameters: { 'expand': 'Supplier' } }">-->
+				<headerToolbar>
+					<Toolbar>
+						<Title id="tableHeader" text="{worklistView>/worklistTableTitle}"/>
+						<ToolbarSpacer/>
+						<SearchField id="searchField" search="onSearch" tooltip="{i18n>worklistSearchTooltip}" width="auto"/>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column id="nameColumn">
+						<Text id="nameColumnTitle" text="问题编号"/>
+					</Column>
+					<Column id="supplierNameColumn" demandPopin="false" minScreenWidth="Tablet">
+						<Text text="问题标题"/>
+					</Column>
+					<Column id="unitPriceColumn" hAlign="Right" demandPopin="true" minScreenWidth="Tablet">
+						<Text text="{/#IssueType/Ztype/@sap:label}"/>
+					</Column>
+					<Column id="unitsOnOrderColumn" demandPopin="true" minScreenWidth="Tablet" hAlign="Right">
+						<Text text="问题分类"/>
+					</Column>
+					<Column id="unitsInStockColumn" hAlign="Right">
+						<Text text="创建人"/>
+					</Column>
+					<Column hAlign="Right">
+						<Text text="邮件"/>
+					</Column>
+					<Column hAlign="Right">
+						<Text text="电话"/>
+					</Column>
+					<Column hAlign="Right">
+						<Text text="描述"/>
+					</Column>
+					<Column hAlign="Right">
+						<Text text="状态"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem press="onPress" type="Navigation">
+						<cells>
+							<ObjectIdentifier title="{IssueId}"/>
+							<ObjectAttribute text="{Title}"/>
+							<Text text="{ parts:['Ztypt'],formatter:'.formatter.issueTypeFormat'}"/>
+							<!--<ComboBox items="{/IssueTypeSet}" selectedKey="{Ztypt}" editable="true">-->
+							<!--	<c:Item key="{Ztype}" text="{Ztypt}"/>-->
+							<!--</ComboBox>-->
+							<!--<Text text="{/IssueTypeSet('01')}"/>-->
+							<Text text="{ parts:['Zmodule'],formatter:'.formatter.issueModuleFormat'}"/>
+							<Text text="{Creatorname}"/>
+							<Text text="{Mail}"/>
+							<Text text="{Phone}"/>
+							<Text text="{Description}"/>
+							<Text text="{ parts:['Status'],formatter:'.formatter.statusTextFormat'}"/>
+							<!--	<ObjectNumber unit="EUR" number="{ path: 'UnitPrice', formatter: '.formatter.numberUnit' }"/>
+							<ObjectNumber number="{UnitsOnOrder}" unit="PC"/>
+							<ObjectNumber number="{UnitsInStock}" unit="PC" state="{ path: 'UnitsInStock', formatter: '.formatter.quantityState' }"/>-->
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</semantic:content>
+		<semantic:positiveAction>
+			<semantic:PositiveAction text="创建" press="onCreate"/>
+		</semantic:positiveAction>
+	</semantic:FullscreenPage>
+</mvc:View>
