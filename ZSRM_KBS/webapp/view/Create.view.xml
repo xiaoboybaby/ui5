@@ -1,38 +1,41 @@
-<mvc:View 
-	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc"
-	controllerName="myCompany.myApp.controller.Create"
-	xmlns:smartForm="sap.ui.comp.smartform" 
-	xmlns:smartField="sap.ui.comp.smartfield">
-	<Page 
-		id="smartFormPage" 
-		title="Product" 
-		enableScrolling="false">
-		<content>
-			<smartForm:SmartForm 
-				id="smartForm"
-				editTogglable="true" 
-				title="创建问题"
-				flexEnabled="false"
-				>
-				<smartForm:Group label="问题反馈">
-					<smartForm:GroupElement>
-						<smartField:SmartField value="{Title}" />
-					</smartForm:GroupElement>
-					<smartForm:GroupElement>
-						<smartField:SmartField value="{Ztypt}" />
-						<smartField:SmartField value="{Zmodule}" />
-					</smartForm:GroupElement>
-					<smartForm:GroupElement elementForLabel="1">
-						<smartField:SmartField value="{Mail}" />
-						<smartField:SmartField value="{Phone}" />
-					</smartForm:GroupElement>
-					<smartForm:GroupElement>
-						<smartField:Smart value="{Description}"/>
-					</smartForm:GroupElement>
-				</smartForm:Group>
-				
-			</smartForm:SmartForm>
-		</content>
+<mvc:View controllerName="myCompany.myApp.controller.Create" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:c="sap.ui.core" xmlns="sap.m">
+	<Page class="sapUiFioriObjectPage" title="{i18n>addProductTitle}" navButtonPress="onNavBack" showNavButton="true">
+		<l:Grid defaultSpan="L12 M12 S12" width="auto">
+			<l:content>
+				<f:SimpleForm id="idAddProductForm" minWidth="800" maxContainerCols="2" editable="true" layout="ResponsiveGridLayout" labelSpanL="3"
+					labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1" class="editableForm">
+					<f:content>
+						<!-- Basic info -->
+						<c:Title text="问题信息"/>
+						<Label text="标题" required="true"/>
+						<Input value="{newProduct>/Title}"/>
+						<Label text="类型" required="true"/>
+						<Select id="idSelectZtypt" items="{/IssueTypeSet}" width="100%" forceSelection="false">
+							<c:Item key="{Ztype}" text="{Ztypt}"/>
+						</Select>
+						<Label text="模块" required="true"/>
+						<!--<Select id="idSelectIssueModule" items="{/IssueModuleSet}" width="100%" forceSelection="false" selectedKey="{newProduct>Zmodule}" >-->
+						<Select id="idSelectZmodule" items="{/IssueModuleSet}" width="100%" forceSelection="false" >
+							<c:Item key="{Zmodule}" text="{Zmodulet}"/>
+						</Select>
+						<Label text="问题详情" required="true"/>
+						<TextArea value="{newProduct>/Description}"/>
+						<c:Title text="联系方式"/>
+						<Label text="邮箱地址" required="true"/>
+						<Input value="{newProduct>/Mail}"/>
+						<Label text="手机号" required="true"/>
+						<Input value="{newProduct>/Phone}"/>
+					</f:content>
+				</f:SimpleForm>
+			</l:content>
+		</l:Grid>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button text="提交" type="Emphasized" press="onSave"/>
+				<Button text="取消" press="onCancel"/>
+			</Toolbar>
+		</footer>
 	</Page>
 </mvc:View>

@@ -31,6 +31,7 @@ sap.ui.define([
 		 * @returns {sap.ui.mvc.View} the view instance
 		 */
 		setModel: function(oModel, sName) {
+			
 			return this.getView().setModel(oModel, sName);
 		},
 
@@ -54,6 +55,15 @@ sap.ui.define([
 				oViewModel.getProperty("/shareSendEmailSubject"),
 				oViewModel.getProperty("/shareSendEmailMessage")
 			);
+		},
+		onNavBack: function() {
+			var oHistory = sap.ui.core.routing.History.getInstance(),
+				sPreviousHash = oHistory.getPreviousHash();
+
+			if (sPreviousHash !== undefined) {
+				// The history contains a previous entry
+				history.go(-1);
+			}
 		}
 
 	});

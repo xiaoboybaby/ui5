@@ -115,10 +115,10 @@
 					"viewId": "notFound"
 				},
 				"create": {
-					"viewName": "create",
-					"viewId": "create"
+					"viewName": "Create",
+					"viewId": "create",
+					"transition": "flip"
 				}
-
 			}
 		}
 	}

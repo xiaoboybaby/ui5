@@ -335,6 +335,7 @@ sap.ui.define([
 			}
 		},
 		onCreate: function() {
+			
 			this.getRouter().navTo("create");
 		},
 		handleLoadItems: function(oControlEvent) {
