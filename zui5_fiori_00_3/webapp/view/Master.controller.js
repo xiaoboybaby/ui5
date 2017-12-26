@@ -15,7 +15,7 @@ sap.ui.controller("zui5_fiori_00.view.Master", {
 	 * @memberOf webapp.view.Master
 	 */
 	//	onBeforeRendering: function() {
-	//
+	//asdfasdf
 	//	},
 
 	/**
